@@ -1,0 +1,131 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 170 100% 70%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 84% 5%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 170 100% 70%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 18%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 213 27% 84%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  ::selection {
+    @apply bg-teal/30 text-navy dark:text-white;
+  }
+
+  .section-padding {
+    @apply py-24 px-6 sm:px-12 md:px-16 lg:px-24;
+  }
+
+  .nav-link {
+    @apply relative text-slate hover:text-teal transition-colors duration-300 ease-in-out;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute left-0 bottom-[-5px] w-0 h-[2px] bg-teal transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .numbered-heading {
+    @apply flex items-center w-full whitespace-nowrap;
+  }
+
+  .numbered-heading::after {
+    @apply content-[''] relative ml-4 w-full h-px bg-lightest-navy dark:bg-light-slate/20;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-block px-6 py-3 font-mono text-sm font-medium transition-all duration-300 rounded border border-teal text-teal bg-transparent hover:bg-teal/10;
+  }
+
+  .card {
+    @apply bg-light-navy rounded-lg p-6 hover:translate-y-[-10px] transition-all duration-300;
+  }
+
+  .section-title {
+    @apply font-bold text-3xl sm:text-4xl mb-4 text-lightest-slate;
+  }
+
+  .section-subtitle {
+    @apply font-mono text-teal mb-6;
+  }
+}
+
+.crisp-chat {
+  z-index: 9999;
+}
